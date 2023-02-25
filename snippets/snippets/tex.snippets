@@ -14,7 +14,7 @@ snippet dmo
 
 #DOCUMENT
 # \begin{}...\end{}
-snippet begin
+snippet beg
 	\begin{${1:env}}
 		${0:${VISUAL}}
 	\end{$1}
@@ -208,6 +208,8 @@ snippet citey
 snippet fcite
 	\footcite[${1}]{${2}}${0}
 #Formating text: italic, bold, underline, small capital, emphase ..
+snippet txt
+	\text{${0:${VISUAL:text}}}
 snippet it
 	\textit{${0:${VISUAL:text}}}
 snippet bf
@@ -269,8 +271,11 @@ snippet tikz
 snippet stackrel
 	\stackrel{${1:above}}{${2:below}} ${0}
 #\frac{}{}
-snippet frac
+snippet fr
 	\frac{${1:num}}{${2:denom}} ${0}
+#\dfrac{}{}
+snippet dfr
+	\dfrac{${1:num}}{${2:denom}} ${0}
 #\sum^{}_{}
 snippet sum
 	\sum^{${1:n}}_{${2:i=1}} ${0}
@@ -313,7 +318,7 @@ snippet \{
 #delimiter
 #Left right
 snippet lr
-	\left${1} ${0} \right$1
+	\left${1} ${0} \right${1}
 #Left( right)
 snippet lr( 
 	\left( ${0} \right)
