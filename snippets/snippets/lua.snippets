@@ -1,12 +1,15 @@
 snippet #!
 	#!/usr/bin/env lua
 	$1
+#variabbl declaration
 snippet local
 	local ${1:x} = ${0:1}
+#function declaration
 snippet fun
 	function ${1:fname}(${2:...})
 		${0:-- body}
 	end
+#iterators
 snippet for
 	for ${1:i}=${2:1},${3:10} do
 		${0:print(i)}
