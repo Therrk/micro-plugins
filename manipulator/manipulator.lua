@@ -140,7 +140,7 @@ function capital() manipulate("(%a)([%w_']*)",
 function init()
     config.MakeCommand("cap", capital, config.NoComplete)
     -- Thanks marinopposite
-    config.MakeCommand("bra", function() manipulate(".*", "(%1)", 1) end, config.NoComplete)
+    config.MakeCommand("br", function() manipulate(".*", "(%1)", 1) end, config.NoComplete)
     config.MakeCommand("cur", function() manipulate(".*", "{%1}", 1) end, config.NoComplete)
     config.MakeCommand("sqa", function() manipulate(".*", "[%1]", 1) end, config.NoComplete)
     config.MakeCommand("dqu", function() manipulate(".*", '"%1"', 1) end, config.NoComplete)
