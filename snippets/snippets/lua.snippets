@@ -22,3 +22,18 @@ snippet fori
 	for ${1:i},${2:v} in ipairs(${3:table_name}) do
 	   ${0:-- body}
 	end
+#conditionals
+snippet if
+	if ${1:variable}==${2:value} then
+		${3:code}
+	end
+snippet ifn
+	if ${1:variable}~=${2:value} then
+		${3:code}
+	end
+# expression if
+snippet ife
+	if ${1:expression} then
+		${2:code}
+	end
+
