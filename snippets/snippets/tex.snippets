@@ -10,23 +10,37 @@ snippet nuc
 	\newunicodechar{${1}}{${2:\ensuremath}${3:tex-substitute}}} ${0}
 #DeclareMathOperator
 snippet dmo
-	\DeclareMathOperator{${1}}{${2}} ${0}
+	\DeclareMathOperator{n{1}}{${2}} ${0}
+#setup the whole document
+snippet setup
+	\documentclass{article}
+
+	\#packages
+
+	\title{${1}}
+	\author{${2}}
+	\date{${3}}
+
+	\begin{document}
+		\maketitle
+		${4}
+	\end{document}
 
 #DOCUMENT
 # \begin{}...\end{}
 snippet beg
 	\begin{${1:env}}
 		${0:${VISUAL}}
-	\end{$1}
+	\end{${1}}
 # Tabular
 snippet tab
 	\begin{${1:tabular}}{${2:c}}
 		${0:${VISUAL}}
-	\end{$1}
+	\end{${1}}
 snippet thm
 	\begin[${1:author}]{${2:thm}}
 		${0:${VISUAL}}
-	\end{$2}
+	\end{${2}}
 snippet center
 	\begin{center}
 		${0:${VISUAL}}
@@ -36,12 +50,12 @@ snippet ali
 	\begin{align${1:ed}}
 		\label{eq:${2}}
 		${0:${VISUAL}}
-	\end{align$1}
+	\end{align${1}}
 # Gather(ed)
 snippet gat
 	\begin{gather${1:ed}}
 		${0:${VISUAL}}
-	\end{gather$1}
+	\end{gather${1}}
 # Equation
 snippet eq
 	\begin{equation}
@@ -104,7 +118,7 @@ snippet ]i
 snippet mat
 	\begin{${1:p/b/v/V/B/small}matrix}
 		${0:${VISUAL}}
-	\end{$1matrix}
+	\end{${1}matrix}
 # Cases
 snippet cas
 	\begin{cases}
@@ -130,42 +144,42 @@ snippet cha
 # Section
 snippet sec
 	\section{${1:section name}}
-	\label{sec:${2:$1}}
+	\label{sec:${2:${1}}}
 	${0}
 # Section without number
 snippet sec*
 	\section*{${1:section name}}
-	\label{sec:${2:$1}}
+	\label{sec:${2:${1}}}
 	${0}
 # Sub Section
 snippet sub
 	\subsection{${1:subsection name}}
-	\label{sub:${2:$1}}
+	\label{sub:${2:${1}}}
 	${0}
 # Sub Section without number
 snippet sub*
 	\subsection*{${1:subsection name}}
-	\label{sub:${2:$1}}
+	\label{sub:${2:${1}}}
 	${0}
 # Sub Sub Section
 snippet subs
 	\subsubsection{${1:subsubsection name}}
-	\label{ssub:${2:$1}}
+	\label{ssub:${2:${1}}}
 	${0}
 # Sub Sub Section without number
 snippet subs*
 	\subsubsection*{${1:subsubsection name}}
-	\label{ssub:${2:$1}}
+	\label{ssub:${2:${1}}}
 	${0}
 # Paragraph
 snippet par
 	\paragraph{${1:paragraph name}}
-	\label{par:${2:$1}}
+	\label{par:${2:${1}}}
 	${0}
 # Sub Paragraph
 snippet subp
 	\subparagraph{${1:subparagraph name}}
-	\label{subp:${2:$1}}
+	\label{subp:${2:${1}}}
 	${0}
 snippet ni
 	\noindent
@@ -313,23 +327,23 @@ snippet col2
 		\end{column}
 	\end{columns}
 #\{ \}
-snippet \{
-	\\{ ${0} \\}
+snippet \{}
+	\{ ${0} \}
 #delimiter
 #Left right
 snippet lr
 	\left${1} ${0} \right${1}
+snippet lr() 
 #Left( right)
-snippet lr( 
 	\left( ${0} \right)
 #Left| right| 
 snippet lr|
 	\left| ${0} \right|
 #Left\{ right\} 
-snippet lr{
+snippet lr{}
 	\left\\{ ${0} \right\\}
 #Left[ right] 
-snippet lr[
+snippet lr[]
 	\left[ ${0} \right]
 #Langle rangle 
 snippet lra
