@@ -4,7 +4,7 @@ snippet nc
 	\newcommand{\\${1:cmd}}[${2:opt}]{${3:realcmd}} ${0}
 #usepackage
 snippet up
-	\usepackage[${1:options}]{${2:package}} ${0}
+	\usepackage${1:[options]}{${2:package}} ${0}
 #newunicodechar
 snippet nuc
 	\newunicodechar{${1}}{${2:\ensuremath}${3:tex-substitute}}} ${0}
@@ -14,7 +14,7 @@ snippet dmo
 #setup the whole document
 snippet setup
 	\documentclass{article}
-
+	
 	\#packages
 
 	\title{${1}}
